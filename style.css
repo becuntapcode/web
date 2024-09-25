@@ -1,0 +1,110 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Căn giữa nội dung */
+    color: white; /* Thay đổi màu chữ để dễ nhìn trên nền */
+    height: 100vh;
+    overflow: hidden;
+    justify-content: center;
+    background-color: #eedcdc;
+}
+video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; /* Đặt video ở dưới cùng */
+    transform: translate(-50%, -50%);
+}
+header {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(120deg, #1a1a2e, #4e4b8d, #e94560);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px; /* Giới hạn chiều rộng */
+    z-index: 10; /* Đảm bảo header nằm trên cùng */
+    position: relative; /* Để z-index hoạt động */
+    text-shadow: 4px 4px 5px black;
+}
+
+#canvas {
+    border-radius: 10px;
+    margin-top: 20px;
+
+}
+
+#label-container {
+    margin-left: 5px;
+    margin-top: 20px;
+color:black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    z-index: 5; /* Đảm bảo nhãn nằm trên nền */
+    position: relative; /* Để z-index hoạt động */
+}
+
+.label {
+    background: rgba(255, 255, 255, 0.8); /* Nền nhạt cho nhãn */
+    border: 1.5px solid #000;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    margin-top: 130px;
+    color: white; /* Màu chữ cho footer */
+    text-shadow: 0 0 5px #ff007f, 0 0 5px #ff007f; 
+}
+.neon-button {
+    background-color: #ff007f; /* Màu nền nút hồng neon */
+    color: #ffffff; /* Màu chữ tối */
+    border: none;
+    border-radius: 5px;
+    padding: 15px 30px;
+    font-size: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+    text-shadow: 0 0 5px #ff007f, 0 0 10px #ff007f; /* Hiệu ứng phát sáng */
+}
+
+.neon-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(126, 32, 32, 0.5);
+    border-radius: 5px;
+    filter: blur(15px);
+    z-index: 0;
+}
+
+.neon-button:hover {
+    transform: scale(1.05); /* Hiệu ứng phóng to khi hover */
+    box-shadow: 0 0 20px #ff007f, 0 0 30px #ff007f; /* Hiệu ứng bóng phát sáng */
+}
+
+.neon-button:focus {
+    outline: none; /* Bỏ viền khi nhấn vào */
+}
+
+.neon-button span {
+    position: relative;
+    z-index: 1; /* Đưa chữ lên trên lớp hiệu ứng */
+}
